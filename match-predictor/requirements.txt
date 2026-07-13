@@ -1,0 +1,75 @@
+# ==========================
+# Data Science
+# ==========================
+numpy
+pandas
+scipy
+pyarrow
+openpyxl
+
+# ==========================
+# Machine Learning
+# ==========================
+scikit-learn
+lightgbm
+xgboost
+catboost
+optuna
+feature-engine
+joblib
+
+# ==========================
+# Estadística
+# ==========================
+statsmodels
+
+# ==========================
+# APIs
+# ==========================
+requests
+httpx
+
+# ==========================
+# Backend
+# ==========================
+fastapi
+uvicorn
+
+# ==========================
+# Configuración
+# ==========================
+python-dotenv
+pydantic
+PyYAML
+
+# ==========================
+# Visualización
+# ==========================
+matplotlib
+plotly
+
+# ==========================
+# Notebook
+# ==========================
+jupyterlab
+ipykernel
+
+# ==========================
+# Calidad
+# ==========================
+pytest
+black
+ruff
+mypy
+pre-commit
+
+# ==========================
+# Logging
+# ==========================
+loguru
+
+# ==========================
+# Utilidades
+# ==========================
+tqdm
+rich
