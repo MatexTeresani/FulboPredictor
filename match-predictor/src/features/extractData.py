@@ -21,7 +21,7 @@ for season_name in season_names:
     elif contSeason == 3: 
         secondSeason = str(sName)
         secondSeason = secondSeason.replace("/", "-")
-
+        break
     contSeason += 1  
     
 print(os.getcwd())
