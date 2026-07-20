@@ -52,7 +52,6 @@ for link in links:
             if contLegue >= cont_legues * 2:  
                 with open(rute, 'wb') as archive:
                     archive.write(response.content) 
-                
              
                 
     
