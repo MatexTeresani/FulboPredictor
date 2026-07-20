@@ -41,10 +41,10 @@ for link in links:
             parts = href.split('/')
             name = str(parts[-1]) 
             contLegue += 1 
-            if contLegue <= 4:     
+            if contLegue <= cont_legues:     
                 rute = 'match-predictor/data/raw/england/'+firstSeason+'/' + name
                 os.makedirs('match-predictor/data/raw/england/'+firstSeason, exist_ok = True) 
-            elif contLegue <= 8: 
+            elif contLegue > cont_legues: 
                 rute = 'match-predictor/data/raw/england/'+secondSeason+'/' + name 
                 os.makedirs('match-predictor/data/raw/england/'+secondSeason, exist_ok = True)
             response = requests.get(url_csv)
