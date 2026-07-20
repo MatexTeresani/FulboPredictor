@@ -49,9 +49,9 @@ for link in links:
                 os.makedirs('match-predictor/data/raw/england/'+secondSeason, exist_ok = True)
             response = requests.get(url_csv)
             
-              
-            with open(rute, 'wb') as archive:
-                archive.write(response.content) 
+            if contLegue >= cont_legues * 2:  
+                with open(rute, 'wb') as archive:
+                    archive.write(response.content) 
                 
              
                 
