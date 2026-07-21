@@ -2,9 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin 
 import os 
-url_league = 'https://football-data.co.uk/englandm.php'
+url_league = 'https://football-data.co.uk/italym.php'
 url_base = 'https://football-data.co.uk/'
-cont_legues = 4 # cambiar en caso de buscar otras ligas 
+cont_legues = 2 # cambiar en caso de buscar otras ligas 
 
 res = requests.get(url_league)
 soup = BeautifulSoup(res.text, 'html.parser')
@@ -42,17 +42,18 @@ for link in links:
             name = str(parts[-1]) 
             contLegue += 1 
             if contLegue <= cont_legues:     
-                rute = 'match-predictor/data/raw/england/'+firstSeason+'/' + name
-                os.makedirs('match-predictor/data/raw/england/'+firstSeason, exist_ok = True) 
+                rute = 'match-predictor/data/raw/italy/'+firstSeason+'/' + name
+                os.makedirs('match-predictor/data/raw/italy/'+firstSeason, exist_ok = True) 
             elif contLegue > cont_legues: 
-                rute = 'match-predictor/data/raw/england/'+secondSeason+'/' + name 
-                os.makedirs('match-predictor/data/raw/england/'+secondSeason, exist_ok = True)
+                rute = 'match-predictor/data/raw/italy/'+secondSeason+'/' + name 
+                os.makedirs('match-predictor/data/raw/italy/'+secondSeason, exist_ok = True)
             response = requests.get(url_csv)
             
-            if contLegue >= cont_legues * 2:  
+            if contLegue <= cont_legues * 2:  
                 with open(rute, 'wb') as archive:
                     archive.write(response.content) 
-             
+            else: 
+                break  
                 
     
 
