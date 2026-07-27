@@ -60,3 +60,7 @@ main()
 # FTHG = full time home goal 
 # FTAG = full time away goal 
 # FTR = full time results H( gana local), D(draw, empate), A(away, visitante gana)
+# HTHG = half time home goals goles del local despues del descanso
+# HTAG = half time away goals, goles de visitante despues del descanso 
+
+# AvgC mercado de apuestas // sumamente importante 
