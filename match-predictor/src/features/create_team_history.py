@@ -1,11 +1,9 @@
 import pandas as pd 
 import groupby_practice 
-import os 
 
 def create_columnsHome(newdf, df):
         
     newdf['Date'] = df['Date']
-    newdf['Date'] = pd.to_datetime(newdf['Date'])
     newdf['Team'] = df['HomeTeam']
     newdf['Opponent'] = df['AwayTeam']
     newdf['GoalsFor'] = df['FTHG']
@@ -21,7 +19,6 @@ def create_columnsHome(newdf, df):
 def create_columnsAway(newdf, df):
         
     newdf['Date'] = df['Date']
-    newdf['Date'] = pd.to_datetime(newdf['Date'])
     newdf['Team'] = df['AwayTeam']
     newdf['Opponent'] = df['HomeTeam']
     newdf['GoalsFor'] = df['FTAG']
@@ -93,7 +90,7 @@ def main():
     })
     history['WinLast3'] = history.groupby('Team')['Win'].transform(lambda x: x.shift(1).rolling(3).sum())
     history['GoalDifferenceLast3'] = history['AvgGoalsForLast3'] - history['AvgGoalsAgainstLast3']
-    history['DaysSinceLastMatch'] = history.groupby('Team')['Date'].diff()
+    history['DaysSinceLastMatch'] = history.groupby('Team')['Date'].diff().dt.days
     
 
     home_history = history.copy()
@@ -146,6 +143,7 @@ def main():
     print(matches_features.shape)
     print(matches_features.info())
     print(matches_features.isnull().sum())
-
+    print(matches_features.columns.tolist())
+    print(matches_features.dtypes.value_counts())
 
 main()    
