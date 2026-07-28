@@ -46,8 +46,8 @@ def save_processed(df, path):
     )
 
 def main(): 
-    ROUTE = r'match-predictor\data\raw\italy\Season 2024-2025\I1.csv'
-    saveRoute = r'match-predictor\data\processed\italy\Season 2024-2025\I1_processed.csv'
+    ROUTE = 'match-predictor/data/raw/italy/Season 2024-2025/I1.csv'
+    saveRoute = 'match-predictor/data/processed/italy/Season 2024-2025/I1_processed.csv'
     df = load_data(ROUTE)
     print(df.info())
     df = convert_dates(df)
